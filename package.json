@@ -13,6 +13,8 @@
   "author": "Baalaji",
   "license": "ISC",
   "dependencies": {
+    "data-fns": "^1.1.0",
+    "date-fns": "^3.6.0",
     "express": "^4.19.2",
     "nodemon": "^3.1.4"
   }

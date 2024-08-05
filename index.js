@@ -1,24 +1,7 @@
 import express from "express";
-
-
+import router from "./Routes/index.js";
 const app=express();
-const port=4000;
-
-//middleware
-app.use(express.json())
-
-//routes
-app.get('/',(req,res)=>{
-   res.status(200).send(`<span style="background: linear-gradient(to left, #33ccff 0%, #ff99cc 100%); color:black;font-size:100px">hii welcome to node project</span>`)
-   //res.status(200).json({message:"hii all welcome to our first node app"})
-})
-
-app.get('/data',(req,res)=>{
-   res.status(200).send(`<span style="background: linear-gradient(to left, #33ccff 0%, #ff99cc 100%); color:black;font-size:100px">hii welcome to node project Day-1</span>`)
-
-})
-
-
-app.listen(port,()=>{
-   console.log(`App is a listening on the port ${port}`)
-})
+//using process.env.PORT to change to render host port automatically after rendering
+const PORT=process.env.PORT||9000;
+app.use("/",router)
+app.listen(PORT,()=>console.log("server started in port"+PORT));
